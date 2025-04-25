@@ -117,13 +117,10 @@ export default tseslint.config(
           extensions: ['.js', '.jsx', '.ts', '.tsx'], 
           moduleDirectory: ['node_modules', 'src/'], 
         },
-        'import-x/resolver-next': [
-          createTypeScriptImportResolver({
-            alwaysTryTypes: true,
-            bun: true,
-            project: ['./tsconfig.json'], // tsconfig.json 위치 지정
-          }),
-        ],
+        typescript: {
+          alwaysTryTypes: true, // 타입스크립트 파일도 찾도록 설정
+          project: './tsconfig.json', // 프로젝트의 tsconfig.json을 사용
+        },
       },
       react: {
         version: '19.0.0',
