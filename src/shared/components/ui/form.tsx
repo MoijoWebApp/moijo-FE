@@ -9,11 +9,12 @@ import {
   useFormState,
 } from 'react-hook-form';
 
-import { Label } from '@/shared/components/ui/label';
 import * as LabelPrimitive from '@radix-ui/react-label';
 import { Slot } from '@radix-ui/react-slot';
 
 import { cn } from '@/shared';
+
+import { Label } from './label';
 
 const Form = FormProvider;
 
