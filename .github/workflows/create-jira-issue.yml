@@ -46,7 +46,7 @@ jobs:
         uses: atlassian/gajira-create@v3
         with:
           project: MOIJO
-          issuetype: Sub-task
+          issuetype: Subtask
           summary: "${{ github.event.issue.title }}"
           description: "${{ steps.md2jira.outputs.output-text }}"
           fields: |
@@ -62,12 +62,17 @@ jobs:
       - name: Checkout develop code
         uses: actions/checkout@v4
         with:
-          ref: develop
+          ref: dev
 
       - name: Create branch with Ticket number
         run: |
-          git checkout -b ${{ steps.create.outputs.issue }}
-          git push origin ${{ steps.create.outputs.issue }}
+          # GitHub 이슈 제목에서 특수 문자 제거 및 공백을 하이픈으로 변경
+          CLEANED_TITLE=$(echo "${{ github.event.issue.title }}" | LC_CTYPE=C sed 's/[^a-zA-Z0-9가-힣 ]//g' | sed 's/ /-/g')
+          BRANCH_NAME="feat/${{ steps.create.outputs.issue }}-${CLEANED_TITLE}"
+          
+          # 브랜치 생성 및 push
+          git checkout -b "$BRANCH_NAME"
+          git push origin "$BRANCH_NAME"
 
       - name: Update issue title
         uses: actions-cool/issues-helper@v3
