@@ -1,6 +1,6 @@
 name: 'Moijo-FE 이슈 생성'
 description: 'Moijo-FE 이슈를 생성하며, 생성된 이슈는 Jira와 연동됩니다.'
-label: [order]
+label: []
 title: '이슈 이름을 작성해주세요.'
 body:
   - type: input
