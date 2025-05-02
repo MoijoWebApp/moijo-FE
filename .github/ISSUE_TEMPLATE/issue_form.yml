@@ -6,7 +6,7 @@ body:
   - type: input
     id: parentKey
     attributes:
-      label: '상위 작업 Ticket Number'
+      label: '👨🏻‍💻 상위 작업 (Ticket Number)'
       description: '상위 작업의 Ticket Number를 기입해주세요'
       placeholder: 'ex. MOIJO-00'
     validations:
@@ -15,7 +15,7 @@ body:
   - type: input
     id: description
     attributes:
-      label: '이슈 내용(Description)'
+      label: '💬 이슈 내용 (Description)'
       description: '이슈에 대해서 간략히 설명해주세요'
     validations:
       required: true
@@ -23,7 +23,7 @@ body:
   - type: textarea
     id: details
     attributes:
-      label: '상세 내용(Details)'
+      label: '📝 상세 내용 (Details)'
       description: '이슈에 대해서 자세히 설명해주세요'
       value: |
         - About Details
