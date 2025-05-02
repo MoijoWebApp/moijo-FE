@@ -1,0 +1,31 @@
+name: 'Moijo-FE 이슈 생성'
+description: 'Moijo-FE 이슈를 생성하며, 생성된 이슈는 Jira와 연동됩니다.'
+label: []
+title: '이슈 이름을 작성해주세요.'
+body:
+  - type: input
+    id: parentKey
+    attributes:
+      label: '상위 작업 Ticket Number'
+      description: '상위 작업의 Ticket Number를 입력해주세요.'
+      placeholder: 'ex. MOIJO-10'
+    validations:
+      required: true
+
+  - type: input
+    id: description
+    attributes:
+      label: 'Description'
+      description: '추가하려는 기능에 대해 간결하게 설명해주세요.'
+    validations:
+      required: true
+  
+  - type: textarea
+    id: todos
+    attributes:
+      label: 'TO-DO'
+      description: '추가하려는 기능을 작성해주세요.'
+      value: |
+        - 기능 1
+    validations:
+      required: true
